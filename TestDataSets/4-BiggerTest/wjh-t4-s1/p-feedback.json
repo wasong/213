@@ -1,0 +1,21 @@
+{
+  "group": [
+    {
+       "name": "Team4 Student1",
+       "sfu_email": "wjh-t4-s1",
+       "contribution": {
+          "score": 3.3,
+          "comment": "From 'Team4 Student1' about 'Team4 Student1'\nAnd they said, \"You'll never get it done!\""
+       }
+    }
+    ,{
+       "name": "Team4 Student2",
+       "sfu_email": "khn-t4-s2",
+       "contribution": {
+          "score": 36.7,
+          "comment": "From 'Team4 Student1' about 'Team4 Student2'\nAnd they said, \"You'll never get it done!\""
+       }
+    }
+  ],
+  "confidential_comments": "That's all! It was \"fun\"! (said Team4 Student1)\nDon't forget: Bring your towel \\ the cake is a lie."
+}

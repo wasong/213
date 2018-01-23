@@ -1,0 +1,13 @@
+{
+  "group": [
+    {
+       "name": "Team1 Student1",
+       "sfu_email": "wib-t1-s1",
+       "contribution": {
+          "score": 20.0,
+          "comment": "From 'Team1 Student1' about 'Team1 Student1'\nAnd they said, \"You'll never get it done!\""
+       }
+    }
+  ],
+  "confidential_comments": "That's all! It was \"fun\"! (said Team1 Student1)\nDon't forget: Bring your towel \\ the cake is a lie."
+}

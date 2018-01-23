@@ -1,0 +1,43 @@
+Group#,Source Student,Target Student,Score,Comment,,Private
+Group 1
+,eyr-t1-s1,ctc-t1-s2,18.7,"From 'Team1 Student1' about 'Team1 Student2'
+And they said, 'You'll never get it done!'",,
+,mmi-t1-s4,ctc-t1-s2,1.4,"From 'Team1 Student4' about 'Team1 Student2'
+And they said, 'You'll never get it done!'",,
+,pco-t1-s3,ctc-t1-s2,11.7,"From 'Team1 Student3' about 'Team1 Student2'
+And they said, 'You'll never get it done!'",,
+,-->,ctc-t1-s2,16.6,"From 'Team1 Student2' about 'Team1 Student2'
+And they said, 'You'll never get it done!'"
+,-->,ctc-t1-s2,avg 10.6 /3,,,"That's all! It was 'fun'! (said Team1 Student2)
+Don't forget: Bring your towel \ the cake is a lie."
+,ctc-t1-s2,eyr-t1-s1,23.9,"From 'Team1 Student2' about 'Team1 Student1'
+And they said, 'You'll never get it done!'",,
+,mmi-t1-s4,eyr-t1-s1,25.5,"From 'Team1 Student4' about 'Team1 Student1'
+And they said, 'You'll never get it done!'",,
+,pco-t1-s3,eyr-t1-s1,23.4,"From 'Team1 Student3' about 'Team1 Student1'
+And they said, 'You'll never get it done!'",,
+,-->,eyr-t1-s1,35.5,"From 'Team1 Student1' about 'Team1 Student1'
+And they said, 'You'll never get it done!'"
+,-->,eyr-t1-s1,avg 24.3 /3,,,"That's all! It was 'fun'! (said Team1 Student1)
+Don't forget: Bring your towel \ the cake is a lie."
+,ctc-t1-s2,mmi-t1-s4,0.4,"From 'Team1 Student2' about 'Team1 Student4'
+And they said, 'You'll never get it done!'",,
+,eyr-t1-s1,mmi-t1-s4,12.6,"From 'Team1 Student1' about 'Team1 Student4'
+And they said, 'You'll never get it done!'",,
+,pco-t1-s3,mmi-t1-s4,23.5,"From 'Team1 Student3' about 'Team1 Student4'
+And they said, 'You'll never get it done!'",,
+,-->,mmi-t1-s4,28.9,"From 'Team1 Student4' about 'Team1 Student4'
+And they said, 'You'll never get it done!'"
+,-->,mmi-t1-s4,avg 12.2 /3,,,"That's all! It was 'fun'! (said Team1 Student4)
+Don't forget: Bring your towel \ the cake is a lie."
+,ctc-t1-s2,pco-t1-s3,39.1,"From 'Team1 Student2' about 'Team1 Student3'
+And they said, 'You'll never get it done!'",,
+,eyr-t1-s1,pco-t1-s3,13.2,"From 'Team1 Student1' about 'Team1 Student3'
+And they said, 'You'll never get it done!'",,
+,mmi-t1-s4,pco-t1-s3,24.2,"From 'Team1 Student4' about 'Team1 Student3'
+And they said, 'You'll never get it done!'",,
+,-->,pco-t1-s3,21.4,"From 'Team1 Student3' about 'Team1 Student3'
+And they said, 'You'll never get it done!'"
+,-->,pco-t1-s3,avg 25.5 /3,,,"That's all! It was 'fun'! (said Team1 Student3)
+Don't forget: Bring your towel \ the cake is a lie."
+

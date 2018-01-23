@@ -1,0 +1,315 @@
+Group#,Source Student,Target Student,Score,Comment,,Private
+Group 1
+,eem-t9-s6,blq-t9-s4,18.8,"From 'Team9 Student6' about 'Team9 Student4'
+And they said, 'You'll never get it done!'",,
+,ggl-t9-s2,blq-t9-s4,26.3,"From 'Team9 Student2' about 'Team9 Student4'
+And they said, 'You'll never get it done!'",,
+,lkn-t9-s1,blq-t9-s4,28.7,"From 'Team9 Student1' about 'Team9 Student4'
+And they said, 'You'll never get it done!'",,
+,mkr-t9-s5,blq-t9-s4,19.2,"From 'Team9 Student5' about 'Team9 Student4'
+And they said, 'You'll never get it done!'",,
+,msp-t9-s7,blq-t9-s4,0.3,"From 'Team9 Student7' about 'Team9 Student4'
+And they said, 'You'll never get it done!'",,
+,soi-t9-s3,blq-t9-s4,19.6,"From 'Team9 Student3' about 'Team9 Student4'
+And they said, 'You'll never get it done!'",,
+,wef-t9-s8,blq-t9-s4,14.0,"From 'Team9 Student8' about 'Team9 Student4'
+And they said, 'You'll never get it done!'",,
+,-->,blq-t9-s4,27.1,"From 'Team9 Student4' about 'Team9 Student4'
+And they said, 'You'll never get it done!'"
+,-->,blq-t9-s4,avg 18.1 /7,,,"That's all! It was 'fun'! (said Team9 Student4)
+Don't forget: Bring your towel \ the cake is a lie."
+,blq-t9-s4,eem-t9-s6,22.0,"From 'Team9 Student4' about 'Team9 Student6'
+And they said, 'You'll never get it done!'",,
+,ggl-t9-s2,eem-t9-s6,17.9,"From 'Team9 Student2' about 'Team9 Student6'
+And they said, 'You'll never get it done!'",,
+,lkn-t9-s1,eem-t9-s6,20.0,"From 'Team9 Student1' about 'Team9 Student6'
+And they said, 'You'll never get it done!'",,
+,mkr-t9-s5,eem-t9-s6,3.2,"From 'Team9 Student5' about 'Team9 Student6'
+And they said, 'You'll never get it done!'",,
+,msp-t9-s7,eem-t9-s6,19.0,"From 'Team9 Student7' about 'Team9 Student6'
+And they said, 'You'll never get it done!'",,
+,soi-t9-s3,eem-t9-s6,12.1,"From 'Team9 Student3' about 'Team9 Student6'
+And they said, 'You'll never get it done!'",,
+,wef-t9-s8,eem-t9-s6,13.9,"From 'Team9 Student8' about 'Team9 Student6'
+And they said, 'You'll never get it done!'",,
+,-->,eem-t9-s6,9.3,"From 'Team9 Student6' about 'Team9 Student6'
+And they said, 'You'll never get it done!'"
+,-->,eem-t9-s6,avg 15.4 /7,,,"That's all! It was 'fun'! (said Team9 Student6)
+Don't forget: Bring your towel \ the cake is a lie."
+,blq-t9-s4,ggl-t9-s2,0.6,"From 'Team9 Student4' about 'Team9 Student2'
+And they said, 'You'll never get it done!'",,
+,eem-t9-s6,ggl-t9-s2,25.8,"From 'Team9 Student6' about 'Team9 Student2'
+And they said, 'You'll never get it done!'",,
+,lkn-t9-s1,ggl-t9-s2,14.9,"From 'Team9 Student1' about 'Team9 Student2'
+And they said, 'You'll never get it done!'",,
+,mkr-t9-s5,ggl-t9-s2,22.1,"From 'Team9 Student5' about 'Team9 Student2'
+And they said, 'You'll never get it done!'",,
+,msp-t9-s7,ggl-t9-s2,19.8,"From 'Team9 Student7' about 'Team9 Student2'
+And they said, 'You'll never get it done!'",,
+,soi-t9-s3,ggl-t9-s2,16.3,"From 'Team9 Student3' about 'Team9 Student2'
+And they said, 'You'll never get it done!'",,
+,wef-t9-s8,ggl-t9-s2,22.0,"From 'Team9 Student8' about 'Team9 Student2'
+And they said, 'You'll never get it done!'",,
+,-->,ggl-t9-s2,29.2,"From 'Team9 Student2' about 'Team9 Student2'
+And they said, 'You'll never get it done!'"
+,-->,ggl-t9-s2,avg 17.4 /7,,,"That's all! It was 'fun'! (said Team9 Student2)
+Don't forget: Bring your towel \ the cake is a lie."
+,blq-t9-s4,lkn-t9-s1,17.4,"From 'Team9 Student4' about 'Team9 Student1'
+And they said, 'You'll never get it done!'",,
+,eem-t9-s6,lkn-t9-s1,10.5,"From 'Team9 Student6' about 'Team9 Student1'
+And they said, 'You'll never get it done!'",,
+,ggl-t9-s2,lkn-t9-s1,24.4,"From 'Team9 Student2' about 'Team9 Student1'
+And they said, 'You'll never get it done!'",,
+,mkr-t9-s5,lkn-t9-s1,20.8,"From 'Team9 Student5' about 'Team9 Student1'
+And they said, 'You'll never get it done!'",,
+,msp-t9-s7,lkn-t9-s1,5.6,"From 'Team9 Student7' about 'Team9 Student1'
+And they said, 'You'll never get it done!'",,
+,soi-t9-s3,lkn-t9-s1,13.9,"From 'Team9 Student3' about 'Team9 Student1'
+And they said, 'You'll never get it done!'",,
+,wef-t9-s8,lkn-t9-s1,4.9,"From 'Team9 Student8' about 'Team9 Student1'
+And they said, 'You'll never get it done!'",,
+,-->,lkn-t9-s1,15.4,"From 'Team9 Student1' about 'Team9 Student1'
+And they said, 'You'll never get it done!'"
+,-->,lkn-t9-s1,avg 13.9 /7,,,"That's all! It was 'fun'! (said Team9 Student1)
+Don't forget: Bring your towel \ the cake is a lie."
+,blq-t9-s4,mkr-t9-s5,21.9,"From 'Team9 Student4' about 'Team9 Student5'
+And they said, 'You'll never get it done!'",,
+,eem-t9-s6,mkr-t9-s5,31.4,"From 'Team9 Student6' about 'Team9 Student5'
+And they said, 'You'll never get it done!'",,
+,ggl-t9-s2,mkr-t9-s5,11.0,"From 'Team9 Student2' about 'Team9 Student5'
+And they said, 'You'll never get it done!'",,
+,lkn-t9-s1,mkr-t9-s5,17.7,"From 'Team9 Student1' about 'Team9 Student5'
+And they said, 'You'll never get it done!'",,
+,msp-t9-s7,mkr-t9-s5,36.1,"From 'Team9 Student7' about 'Team9 Student5'
+And they said, 'You'll never get it done!'",,
+,soi-t9-s3,mkr-t9-s5,29.5,"From 'Team9 Student3' about 'Team9 Student5'
+And they said, 'You'll never get it done!'",,
+,wef-t9-s8,mkr-t9-s5,28.6,"From 'Team9 Student8' about 'Team9 Student5'
+And they said, 'You'll never get it done!'",,
+,-->,mkr-t9-s5,19.2,"From 'Team9 Student5' about 'Team9 Student5'
+And they said, 'You'll never get it done!'"
+,-->,mkr-t9-s5,avg 25.2 /7,,,"That's all! It was 'fun'! (said Team9 Student5)
+Don't forget: Bring your towel \ the cake is a lie."
+,blq-t9-s4,msp-t9-s7,12.4,"From 'Team9 Student4' about 'Team9 Student7'
+And they said, 'You'll never get it done!'",,
+,eem-t9-s6,msp-t9-s7,29.9,"From 'Team9 Student6' about 'Team9 Student7'
+And they said, 'You'll never get it done!'",,
+,ggl-t9-s2,msp-t9-s7,18.8,"From 'Team9 Student2' about 'Team9 Student7'
+And they said, 'You'll never get it done!'",,
+,lkn-t9-s1,msp-t9-s7,12.8,"From 'Team9 Student1' about 'Team9 Student7'
+And they said, 'You'll never get it done!'",,
+,mkr-t9-s5,msp-t9-s7,26.6,"From 'Team9 Student5' about 'Team9 Student7'
+And they said, 'You'll never get it done!'",,
+,soi-t9-s3,msp-t9-s7,24.4,"From 'Team9 Student3' about 'Team9 Student7'
+And they said, 'You'll never get it done!'",,
+,wef-t9-s8,msp-t9-s7,29.5,"From 'Team9 Student8' about 'Team9 Student7'
+And they said, 'You'll never get it done!'",,
+,-->,msp-t9-s7,44.0,"From 'Team9 Student7' about 'Team9 Student7'
+And they said, 'You'll never get it done!'"
+,-->,msp-t9-s7,avg 22.1 /7,,,"That's all! It was 'fun'! (said Team9 Student7)
+Don't forget: Bring your towel \ the cake is a lie."
+,blq-t9-s4,soi-t9-s3,34.9,"From 'Team9 Student4' about 'Team9 Student3'
+And they said, 'You'll never get it done!'",,
+,eem-t9-s6,soi-t9-s3,13.7,"From 'Team9 Student6' about 'Team9 Student3'
+And they said, 'You'll never get it done!'",,
+,ggl-t9-s2,soi-t9-s3,4.8,"From 'Team9 Student2' about 'Team9 Student3'
+And they said, 'You'll never get it done!'",,
+,lkn-t9-s1,soi-t9-s3,15.7,"From 'Team9 Student1' about 'Team9 Student3'
+And they said, 'You'll never get it done!'",,
+,mkr-t9-s5,soi-t9-s3,26.1,"From 'Team9 Student5' about 'Team9 Student3'
+And they said, 'You'll never get it done!'",,
+,msp-t9-s7,soi-t9-s3,17.9,"From 'Team9 Student7' about 'Team9 Student3'
+And they said, 'You'll never get it done!'",,
+,wef-t9-s8,soi-t9-s3,29.1,"From 'Team9 Student8' about 'Team9 Student3'
+And they said, 'You'll never get it done!'",,
+,-->,soi-t9-s3,19.0,"From 'Team9 Student3' about 'Team9 Student3'
+And they said, 'You'll never get it done!'"
+,-->,soi-t9-s3,avg 20.3 /7,,,"That's all! It was 'fun'! (said Team9 Student3)
+Don't forget: Bring your towel \ the cake is a lie."
+,blq-t9-s4,wef-t9-s8,23.7,"From 'Team9 Student4' about 'Team9 Student8'
+And they said, 'You'll never get it done!'",,
+,eem-t9-s6,wef-t9-s8,20.6,"From 'Team9 Student6' about 'Team9 Student8'
+And they said, 'You'll never get it done!'",,
+,ggl-t9-s2,wef-t9-s8,27.6,"From 'Team9 Student2' about 'Team9 Student8'
+And they said, 'You'll never get it done!'",,
+,lkn-t9-s1,wef-t9-s8,34.8,"From 'Team9 Student1' about 'Team9 Student8'
+And they said, 'You'll never get it done!'",,
+,mkr-t9-s5,wef-t9-s8,22.8,"From 'Team9 Student5' about 'Team9 Student8'
+And they said, 'You'll never get it done!'",,
+,msp-t9-s7,wef-t9-s8,17.3,"From 'Team9 Student7' about 'Team9 Student8'
+And they said, 'You'll never get it done!'",,
+,soi-t9-s3,wef-t9-s8,25.2,"From 'Team9 Student3' about 'Team9 Student8'
+And they said, 'You'll never get it done!'",,
+,-->,wef-t9-s8,18.0,"From 'Team9 Student8' about 'Team9 Student8'
+And they said, 'You'll never get it done!'"
+,-->,wef-t9-s8,avg 24.6 /7,,,"That's all! It was 'fun'! (said Team9 Student8)
+Don't forget: Bring your towel \ the cake is a lie."
+
+Group 2
+,xhs-t6-s2,cbo-t6-s1,21.5,"From 'Team6 Student2' about 'Team6 Student1'
+And they said, 'You'll never get it done!'",,
+,xob-t6-s3,cbo-t6-s1,20.8,"From 'Team6 Student3' about 'Team6 Student1'
+And they said, 'You'll never get it done!'",,
+,-->,cbo-t6-s1,7.6,"From 'Team6 Student1' about 'Team6 Student1'
+And they said, 'You'll never get it done!'"
+,-->,cbo-t6-s1,avg 21.2 /2,,,"That's all! It was 'fun'! (said Team6 Student1)
+Don't forget: Bring your towel \ the cake is a lie."
+,cbo-t6-s1,xhs-t6-s2,12.6,"From 'Team6 Student1' about 'Team6 Student2'
+And they said, 'You'll never get it done!'",,
+,xob-t6-s3,xhs-t6-s2,15.3,"From 'Team6 Student3' about 'Team6 Student2'
+And they said, 'You'll never get it done!'",,
+,-->,xhs-t6-s2,35.8,"From 'Team6 Student2' about 'Team6 Student2'
+And they said, 'You'll never get it done!'"
+,-->,xhs-t6-s2,avg 14.0 /2,,,"That's all! It was 'fun'! (said Team6 Student2)
+Don't forget: Bring your towel \ the cake is a lie."
+,cbo-t6-s1,xob-t6-s3,39.8,"From 'Team6 Student1' about 'Team6 Student3'
+And they said, 'You'll never get it done!'",,
+,xhs-t6-s2,xob-t6-s3,2.7,"From 'Team6 Student2' about 'Team6 Student3'
+And they said, 'You'll never get it done!'",,
+,-->,xob-t6-s3,23.9,"From 'Team6 Student3' about 'Team6 Student3'
+And they said, 'You'll never get it done!'"
+,-->,xob-t6-s3,avg 21.3 /2,,,"That's all! It was 'fun'! (said Team6 Student3)
+Don't forget: Bring your towel \ the cake is a lie."
+
+Group 3
+,pky-t8-s2,cmb-t8-s4,39.7,"From 'Team8 Student2' about 'Team8 Student4'
+And they said, 'You'll never get it done!'",,
+,trd-t8-s3,cmb-t8-s4,29.5,"From 'Team8 Student3' about 'Team8 Student4'
+And they said, 'You'll never get it done!'",,
+,yod-t8-s1,cmb-t8-s4,22.5,"From 'Team8 Student1' about 'Team8 Student4'
+And they said, 'You'll never get it done!'",,
+,-->,cmb-t8-s4,33.5,"From 'Team8 Student4' about 'Team8 Student4'
+And they said, 'You'll never get it done!'"
+,-->,cmb-t8-s4,avg 30.6 /3,,,"That's all! It was 'fun'! (said Team8 Student4)
+Don't forget: Bring your towel \ the cake is a lie."
+,cmb-t8-s4,pky-t8-s2,0.0,"From 'Team8 Student4' about 'Team8 Student2'
+And they said, 'You'll never get it done!'",,
+,trd-t8-s3,pky-t8-s2,22.6,"From 'Team8 Student3' about 'Team8 Student2'
+And they said, 'You'll never get it done!'",,
+,yod-t8-s1,pky-t8-s2,11.5,"From 'Team8 Student1' about 'Team8 Student2'
+And they said, 'You'll never get it done!'",,
+,-->,pky-t8-s2,8.4,"From 'Team8 Student2' about 'Team8 Student2'
+And they said, 'You'll never get it done!'"
+,-->,pky-t8-s2,avg 11.4 /3,,,"That's all! It was 'fun'! (said Team8 Student2)
+Don't forget: Bring your towel \ the cake is a lie."
+,cmb-t8-s4,trd-t8-s3,32.8,"From 'Team8 Student4' about 'Team8 Student3'
+And they said, 'You'll never get it done!'",,
+,pky-t8-s2,trd-t8-s3,31.0,"From 'Team8 Student2' about 'Team8 Student3'
+And they said, 'You'll never get it done!'",,
+,yod-t8-s1,trd-t8-s3,22.9,"From 'Team8 Student1' about 'Team8 Student3'
+And they said, 'You'll never get it done!'",,
+,-->,trd-t8-s3,17.1,"From 'Team8 Student3' about 'Team8 Student3'
+And they said, 'You'll never get it done!'"
+,-->,trd-t8-s3,avg 28.9 /3,,,"That's all! It was 'fun'! (said Team8 Student3)
+Don't forget: Bring your towel \ the cake is a lie."
+,cmb-t8-s4,yod-t8-s1,13.7,"From 'Team8 Student4' about 'Team8 Student1'
+And they said, 'You'll never get it done!'",,
+,pky-t8-s2,yod-t8-s1,0.9,"From 'Team8 Student2' about 'Team8 Student1'
+And they said, 'You'll never get it done!'",,
+,trd-t8-s3,yod-t8-s1,10.8,"From 'Team8 Student3' about 'Team8 Student1'
+And they said, 'You'll never get it done!'",,
+,-->,yod-t8-s1,23.1,"From 'Team8 Student1' about 'Team8 Student1'
+And they said, 'You'll never get it done!'"
+,-->,yod-t8-s1,avg 8.5 /3,,,"That's all! It was 'fun'! (said Team8 Student1)
+Don't forget: Bring your towel \ the cake is a lie."
+
+Group 4
+,gff-t7-s1,ctn-t7-s3,8.1,"From 'Team7 Student1' about 'Team7 Student3'
+And they said, 'You'll never get it done!'",,
+,xva-t7-s2,ctn-t7-s3,18.8,"From 'Team7 Student2' about 'Team7 Student3'
+And they said, 'You'll never get it done!'",,
+,-->,ctn-t7-s3,0.2,"From 'Team7 Student3' about 'Team7 Student3'
+And they said, 'You'll never get it done!'"
+,-->,ctn-t7-s3,avg 13.5 /2,,,"That's all! It was 'fun'! (said Team7 Student3)
+Don't forget: Bring your towel \ the cake is a lie."
+,ctn-t7-s3,gff-t7-s1,36.8,"From 'Team7 Student3' about 'Team7 Student1'
+And they said, 'You'll never get it done!'",,
+,xva-t7-s2,gff-t7-s1,24.7,"From 'Team7 Student2' about 'Team7 Student1'
+And they said, 'You'll never get it done!'",,
+,-->,gff-t7-s1,34.3,"From 'Team7 Student1' about 'Team7 Student1'
+And they said, 'You'll never get it done!'"
+,-->,gff-t7-s1,avg 30.8 /2,,,"That's all! It was 'fun'! (said Team7 Student1)
+Don't forget: Bring your towel \ the cake is a lie."
+,ctn-t7-s3,xva-t7-s2,23.0,"From 'Team7 Student3' about 'Team7 Student2'
+And they said, 'You'll never get it done!'",,
+,gff-t7-s1,xva-t7-s2,17.6,"From 'Team7 Student1' about 'Team7 Student2'
+And they said, 'You'll never get it done!'",,
+,-->,xva-t7-s2,16.5,"From 'Team7 Student2' about 'Team7 Student2'
+And they said, 'You'll never get it done!'"
+,-->,xva-t7-s2,avg 20.3 /2,,,"That's all! It was 'fun'! (said Team7 Student2)
+Don't forget: Bring your towel \ the cake is a lie."
+
+Group 5
+,str-t5-s2,gmm-t5-s1,22.7,"From 'Team5 Student2' about 'Team5 Student1'
+And they said, 'You'll never get it done!'",,
+,vls-t5-s3,gmm-t5-s1,6.5,"From 'Team5 Student3' about 'Team5 Student1'
+And they said, 'You'll never get it done!'",,
+,-->,gmm-t5-s1,0.4,"From 'Team5 Student1' about 'Team5 Student1'
+And they said, 'You'll never get it done!'"
+,-->,gmm-t5-s1,avg 14.6 /2,,,"That's all! It was 'fun'! (said Team5 Student1)
+Don't forget: Bring your towel \ the cake is a lie."
+,gmm-t5-s1,str-t5-s2,25.8,"From 'Team5 Student1' about 'Team5 Student2'
+And they said, 'You'll never get it done!'",,
+,vls-t5-s3,str-t5-s2,39.7,"From 'Team5 Student3' about 'Team5 Student2'
+And they said, 'You'll never get it done!'",,
+,-->,str-t5-s2,22.6,"From 'Team5 Student2' about 'Team5 Student2'
+And they said, 'You'll never get it done!'"
+,-->,str-t5-s2,avg 32.8 /2,,,"That's all! It was 'fun'! (said Team5 Student2)
+Don't forget: Bring your towel \ the cake is a lie."
+,gmm-t5-s1,vls-t5-s3,33.8,"From 'Team5 Student1' about 'Team5 Student3'
+And they said, 'You'll never get it done!'",,
+,str-t5-s2,vls-t5-s3,14.7,"From 'Team5 Student2' about 'Team5 Student3'
+And they said, 'You'll never get it done!'",,
+,-->,vls-t5-s3,13.8,"From 'Team5 Student3' about 'Team5 Student3'
+And they said, 'You'll never get it done!'"
+,-->,vls-t5-s3,avg 24.3 /2,,,"That's all! It was 'fun'! (said Team5 Student3)
+Don't forget: Bring your towel \ the cake is a lie."
+
+Group 6
+,ptx-t3-s2,jum-t3-s1,14.8,"From 'Team3 Student2' about 'Team3 Student1'
+And they said, 'You'll never get it done!'",,
+,-->,jum-t3-s1,20.8,"From 'Team3 Student1' about 'Team3 Student1'
+And they said, 'You'll never get it done!'"
+,-->,jum-t3-s1,avg 14.8 /1,,,"That's all! It was 'fun'! (said Team3 Student1)
+Don't forget: Bring your towel \ the cake is a lie."
+,jum-t3-s1,ptx-t3-s2,19.2,"From 'Team3 Student1' about 'Team3 Student2'
+And they said, 'You'll never get it done!'",,
+,-->,ptx-t3-s2,25.2,"From 'Team3 Student2' about 'Team3 Student2'
+And they said, 'You'll never get it done!'"
+,-->,ptx-t3-s2,avg 19.2 /1,,,"That's all! It was 'fun'! (said Team3 Student2)
+Don't forget: Bring your towel \ the cake is a lie."
+
+Group 7
+,wjh-t4-s1,khn-t4-s2,36.7,"From 'Team4 Student1' about 'Team4 Student2'
+And they said, 'You'll never get it done!'",,
+,-->,khn-t4-s2,28.6,"From 'Team4 Student2' about 'Team4 Student2'
+And they said, 'You'll never get it done!'"
+,-->,khn-t4-s2,avg 36.7 /1,,,"That's all! It was 'fun'! (said Team4 Student2)
+Don't forget: Bring your towel \ the cake is a lie."
+,khn-t4-s2,wjh-t4-s1,11.4,"From 'Team4 Student2' about 'Team4 Student1'
+And they said, 'You'll never get it done!'",,
+,-->,wjh-t4-s1,3.3,"From 'Team4 Student1' about 'Team4 Student1'
+And they said, 'You'll never get it done!'"
+,-->,wjh-t4-s1,avg 11.4 /1,,,"That's all! It was 'fun'! (said Team4 Student1)
+Don't forget: Bring your towel \ the cake is a lie."
+
+Group 8
+,rus-t2-s2,mqa-t2-s1,13.2,"From 'Team2 Student2' about 'Team2 Student1'
+And they said, 'You'll never get it done!'",,
+,-->,mqa-t2-s1,36.6,"From 'Team2 Student1' about 'Team2 Student1'
+And they said, 'You'll never get it done!'"
+,-->,mqa-t2-s1,avg 13.2 /1,,,"That's all! It was 'fun'! (said Team2 Student1)
+Don't forget: Bring your towel \ the cake is a lie."
+,mqa-t2-s1,rus-t2-s2,3.4,"From 'Team2 Student1' about 'Team2 Student2'
+And they said, 'You'll never get it done!'",,
+,-->,rus-t2-s2,26.8,"From 'Team2 Student2' about 'Team2 Student2'
+And they said, 'You'll never get it done!'"
+,-->,rus-t2-s2,avg 3.4 /1,,,"That's all! It was 'fun'! (said Team2 Student2)
+Don't forget: Bring your towel \ the cake is a lie."
+
+Group 9
+,-->,wib-t1-s1,20.0,"From 'Team1 Student1' about 'Team1 Student1'
+And they said, 'You'll never get it done!'"
+,-->,wib-t1-s1,avg NaN /0,,,"That's all! It was 'fun'! (said Team1 Student1)
+Don't forget: Bring your towel \ the cake is a lie."
+
