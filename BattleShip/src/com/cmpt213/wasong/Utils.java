@@ -38,11 +38,11 @@ public class Utils {
     public static List<Integer> mapCoordinateToPoint(String coordinate) {
         List<Integer> point = new ArrayList<>();
 
-        int pointY = mapASCIIToDecimal(coordinate.charAt(0));
-        int pointX = Character.getNumericValue(coordinate.charAt(1));
+        int pointX = mapASCIIToDecimal(coordinate.charAt(0));
+        int pointY = Character.getNumericValue(coordinate.charAt(1));
 
-        point.add(pointY);
         point.add(pointX);
+        point.add(pointY);
 
         return point;
     }

@@ -39,16 +39,18 @@ public class Start {
             isCheating = args[1].equals("--cheat");
         }
 
-        Field.generateGrid(5);
+        // initialize the playing field
+        Field.generateGrid();
         tankList = Field.generateTanks(tanks);
         Field.showGrid();
 
         while (!isFinished) {
+            /******** Get User Move START *******/
             boolean validMove = false;
             String move;
-            List<Integer> point;
+            List<Integer> point = new ArrayList<>(); // 0 = X, 1 = Y
             while (!validMove) {
-                System.out.println("Enter your move: ");
+                System.out.print("Enter your move: ");
                 Scanner s = new Scanner(System.in);
                 move = s.next();
                 validMove = move.length() == 2;
@@ -57,14 +59,46 @@ public class Start {
                     System.out.println("Invalid move! Try again.");
                 } else {
                     point = Utils.mapCoordinateToPoint(move);
-                    System.out.println(point.get(0) + " " + point.get(1));
                     if (point.get(0) == -1 || point.get(1) == -1) {
                         validMove = false;
                         System.out.println("Invalid move! Try again.");
                     }
                 }
             }
+            /******** Get User Move END *******/
 
+            /******** Handle User Move START *******/
+            Cell targetCell = Field.getCell(point.get(0), point.get(1));
+            if (targetCell.isTank()) {
+                System.out.println(targetCell.getCoordinates());
+                targetCell.handleOnHit();
+                System.out.println("HIT!");
+            } else {
+                System.out.println("MISS!");
+            }
+
+            /******** Handle User Move END *******/
+
+            checkGameState();
+
+            /******** Handle Enemy Move START *******/
+            int damageDone = 0;
+            for (Tank t : tankList) {
+                damageDone += t.damageDone();
+            }
+            fortress.getHit(damageDone);
+            System.out.println("Fortress has " + fortress.getHp() + " HP left!");
+
+            /******** Handle Enemy Move END *******/
+
+            checkGameState();
+            Field.showGrid();
+        }
+
+        if (hasWon) {
+            System.out.println("Congratulations! You have won!");
+        } else {
+            System.out.println("Oh no! Your fortress is down! You have lost!");
         }
     }
 }

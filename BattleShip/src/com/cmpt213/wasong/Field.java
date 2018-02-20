@@ -2,13 +2,12 @@ package com.cmpt213.wasong;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 public class Field {
     private static List<List<Cell>> grid = new ArrayList<>();
 
-    public static void generateGrid(int tanks) {
+    public static void generateGrid() {
         int gridY = 10;
         int gridX = 10;
 
@@ -28,12 +27,10 @@ public class Field {
 
 //        System.out.println("---Tetromino Debug---");
         for (int i = 0; i < tanks; i++) {
-            List<Cell> tetrominos = generateTetromino();
+            int tankID = 'A' + i;
+            List<Cell> tetrominos = generateTetromino((char) tankID);
 
-            // third party solution from https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
-            // set tankID
-            // int tankID = ThreadLocalRandom.current().nextInt(1000, 9999);
-            tankList.add(new Tank(tetrominos));
+            tankList.add(new Tank(tetrominos, (char) tankID));
 
 //            System.out.println("Tetromino: " + i);
 //            for (Cell c : tetrominos) {
@@ -45,7 +42,7 @@ public class Field {
         return tankList;
     }
 
-    private static List<Cell> generateTetromino() {
+    private static List<Cell> generateTetromino(char tankID) {
         List<Integer> point = Utils.selectRandomCell(0, 9);
         List<Cell> tetromino = new ArrayList<>();
         int x = point.get(0);
@@ -67,14 +64,13 @@ public class Field {
         }
 
         selectedCell.setAsTank();
+        selectedCell.setTankID(tankID);
 
         // add to tetromino
         tetromino.add(selectedCell);
 
         for (int i = 0; i < 3; i++) {
             boolean inBound = false;
-            // check if in bounds
-
             int retry = 0;
 
             while (!inBound) {
@@ -113,6 +109,7 @@ public class Field {
                         y = testY;
                         selectedCell = getCell(x, y);
                         selectedCell.setAsTank();
+                        selectedCell.setTankID(tankID);
                     }
                 }
 //                System.out.println("Finished! " + " X: " + testX + ", Y: " + testY);
@@ -120,7 +117,7 @@ public class Field {
                     i -= 1;
                     System.out.println("Retrying!");
                     try {
-                        TimeUnit.SECONDS.sleep(5);
+                        TimeUnit.SECONDS.sleep(2);
                     } catch (InterruptedException e) {
                         System.out.println(e);
                     }
@@ -135,7 +132,7 @@ public class Field {
         return tetromino;
     }
 
-    private static Cell getCell(int x, int y) {
+    public static Cell getCell(int x, int y) {
         return grid.get(x).get(y);
     }
 
@@ -145,9 +142,9 @@ public class Field {
                 if (c.isHit()) {
                     System.out.print("[X]");
                 } else if (c.isTank()) {
-                    System.out.print("[T]");
+                    System.out.print("[" + c.getTankID() + "]");
                 } else  {
-                    System.out.print("[ ]");
+                    System.out.print("[~]");
                 }
             }
             System.out.println();

@@ -1,6 +1,7 @@
 package com.cmpt213.wasong;
 
 public class Cell {
+    private char tankID;
     private boolean isTank = false;
     private boolean isHit = false;
     private int x;
@@ -22,6 +23,14 @@ public class Cell {
 
     public void setAsTank() {
         this.isTank = true;
+    }
+
+    public void setTankID(char tankID) {
+        this.tankID = tankID;
+    }
+
+    public char getTankID() {
+        return tankID;
     }
 
     public void setCoordinates(int x, int y) {
