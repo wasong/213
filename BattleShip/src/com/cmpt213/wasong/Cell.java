@@ -1,31 +1,27 @@
 package com.cmpt213.wasong;
 
 public class Cell {
-    private int tankID = 0;
+    private boolean isTank = false;
     private boolean isHit = false;
     private int x;
     private int y;
 
     public Cell() {}
 
-    public boolean checkIfHit() {
+    public boolean isHit() {
         return isHit;
     }
 
-    public int getTankID() {
-        return tankID;
-    }
-
     public boolean isTank() {
-        return tankID != 0;
+        return isTank;
     }
 
     public void handleOnHit() {
         this.isHit = true;
     }
 
-    public void setTankID(int tankID) {
-        this.tankID = tankID;
+    public void setAsTank() {
+        this.isTank = true;
     }
 
     public void setCoordinates(int x, int y) {

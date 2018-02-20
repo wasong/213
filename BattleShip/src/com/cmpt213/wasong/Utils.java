@@ -1,5 +1,7 @@
 package com.cmpt213.wasong;
 
+import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -31,5 +33,35 @@ public class Utils {
             default:
                 return 'T';
         }
+    }
+
+    public static List<Integer> mapCoordinateToPoint(String coordinate) {
+        List<Integer> point = new ArrayList<>();
+
+        int pointY = mapASCIIToDecimal(coordinate.charAt(0));
+        int pointX = Character.getNumericValue(coordinate.charAt(1));
+
+        point.add(pointY);
+        point.add(pointX);
+
+        return point;
+    }
+
+    private static int mapASCIIToDecimal(int value) {
+        int lowercase = 97;
+        int uppercase = 65;
+
+        int maxLowercase = lowercase + 10;
+        int maxUppercase = uppercase + 10;
+
+        if (value >= uppercase && value < maxUppercase) {
+            return value - uppercase;
+        }
+
+        if (value >= lowercase && value < maxLowercase) {
+            return value - lowercase;
+        }
+
+        return -1;
     }
 }

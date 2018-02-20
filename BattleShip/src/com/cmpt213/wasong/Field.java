@@ -15,23 +15,34 @@ public class Field {
         for (int i = 0; i < gridY; i++) {
             List<Cell> row = new ArrayList<>();
             for (int j = 0; j < gridX; j++) {
-                row.add(new Cell());
+                Cell c = new Cell();
+                c.setCoordinates(i, j);
+                row.add(c);
             }
             grid.add(row);
         }
+    }
 
-//        generateTetromino();
+    public static List<Tank> generateTanks(int tanks) {
+        List<Tank> tankList = new ArrayList<>();
 
-        System.out.println("---Tetromino Debug---");
+//        System.out.println("---Tetromino Debug---");
         for (int i = 0; i < tanks; i++) {
             List<Cell> tetrominos = generateTetromino();
-            System.out.println("Tetromino: " + i);
-            for (Cell c : tetrominos) {
-                System.out.println(c.getTankID() + " " + c.getCoordinates());
-            }
-            System.out.println();
+
+            // third party solution from https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
+            // set tankID
+            // int tankID = ThreadLocalRandom.current().nextInt(1000, 9999);
+            tankList.add(new Tank(tetrominos));
+
+//            System.out.println("Tetromino: " + i);
+//            for (Cell c : tetrominos) {
+//                System.out.println(c.isTank() + " " + c.getCoordinates());
+//            }
+//            System.out.println();
         }
-        System.out.println("---------------------");
+//        System.out.println("---------------------");
+        return tankList;
     }
 
     private static List<Cell> generateTetromino() {
@@ -39,28 +50,23 @@ public class Field {
         List<Cell> tetromino = new ArrayList<>();
         int x = point.get(0);
         int y = point.get(1);
-        System.out.println("First X: " + x + ", Y: " + y);
+//        System.out.println("First X: " + x + ", Y: " + y);
 
         Cell selectedCell = getCell(x, y);
 
         // find an empty starting point
         while (selectedCell.isTank()) {
-            System.out.println("Is tank:");
+//            System.out.println("Is tank:");
             point = Utils.selectRandomCell(0, 9);
             x = point.get(0);
             y = point.get(1);
 
-            System.out.println(x + " " + y);
+//            System.out.println(x + " " + y);
 
             selectedCell = getCell(x, y);
         }
 
-        selectedCell.setCoordinates(x, y);
-
-        // third party solution from https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
-        // set tankID
-        int tankID = ThreadLocalRandom.current().nextInt(1000, 9999);
-        selectedCell.setTankID(tankID);
+        selectedCell.setAsTank();
 
         // add to tetromino
         tetromino.add(selectedCell);
@@ -76,7 +82,7 @@ public class Field {
                 int testY = y;
 
                 char direction = Utils.selectRandomDirection();
-                System.out.println("Direction: " + direction);
+//                System.out.println("Direction: " + direction);
                 switch (direction) {
                     case 'T':
                         testY -= 1;
@@ -94,23 +100,22 @@ public class Field {
                         break;
                 }
                 inBound = testX > -1 && testX < 10 && testY > -1 && testY < 10;
-                System.out.println("InBound: " + inBound);
+//                System.out.println("InBound: " + inBound);
                 if (inBound) {
                     // check if the Cell is a tank
                     if (getCell(testX, testY).isTank()) {
-                        System.out.println("Is Tank!");
+//                        System.out.println("Is Tank!");
                         inBound = false;
                         retry += 1;
                     } else {
-                        System.out.println("Is Not Tank!");
+//                        System.out.println("Is Not Tank!");
                         x = testX;
                         y = testY;
                         selectedCell = getCell(x, y);
-                        selectedCell.setTankID(tankID);
-                        selectedCell.setCoordinates(x, y);
+                        selectedCell.setAsTank();
                     }
                 }
-                System.out.println("Finished! " + " X: " + testX + ", Y: " + testY);
+//                System.out.println("Finished! " + " X: " + testX + ", Y: " + testY);
                 if (retry > 10) {
                     i -= 1;
                     System.out.println("Retrying!");
@@ -124,7 +129,7 @@ public class Field {
             }
             if (retry <= 10) {
                 tetromino.add(selectedCell);
-                System.out.println((i + 1) + "/3\n");
+//                System.out.println((i + 1) + "/3\n");
             }
         }
         return tetromino;
@@ -137,10 +142,9 @@ public class Field {
     public static void showGrid() {
         for(List<Cell> l : grid) {
             for(Cell c : l) {
-                if (c.checkIfHit()) {
+                if (c.isHit()) {
                     System.out.print("[X]");
                 } else if (c.isTank()) {
-//                    System.out.println("[" + c.getTankID() + "]");
                     System.out.print("[T]");
                 } else  {
                     System.out.print("[ ]");
