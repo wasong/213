@@ -68,10 +68,8 @@ public class Start {
             /******** Get User Move END *******/
 
             /******** Handle User Move START *******/
-            Cell targetCell = Field.getCell(point.get(0), point.get(1));
-            if (targetCell.isTank()) {
-                System.out.println(targetCell.getCoordinates());
-                targetCell.handleOnHit();
+            boolean hitResult = Field.targetCell(point.get(0), point.get(1));
+            if (hitResult) {
                 System.out.println("HIT!");
             } else {
                 System.out.println("MISS!");

@@ -17,8 +17,9 @@ public class Cell {
         return isTank;
     }
 
-    public void handleOnHit() {
+    public boolean handleOnHit() {
         this.isHit = true;
+        return isHit && isTank;
     }
 
     public void setAsTank() {

@@ -6,11 +6,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Field {
     private static List<List<Cell>> grid = new ArrayList<>();
+    private static final int gridX = 10;
+    private static final int gridY = 10;
 
     public static void generateGrid() {
-        int gridY = 10;
-        int gridX = 10;
-
         for (int i = 0; i < gridY; i++) {
             List<Cell> row = new ArrayList<>();
             for (int j = 0; j < gridX; j++) {
@@ -136,14 +135,30 @@ public class Field {
         return grid.get(x).get(y);
     }
 
+    public static boolean targetCell(int x, int y) {
+        Cell target = getCell(x, y);
+        return target.handleOnHit();
+    }
+
     public static void showGrid() {
-        for(List<Cell> l : grid) {
+        // offset row label
+        System.out.print("  ");
+
+        // print column labels
+        for (int i = 0; i < gridX; i++) System.out.print(" " + i + " ");
+        System.out.println();
+
+        for (int i = 0; i < gridY; i++) {
+            // print row labels
+            List<Cell> l = grid.get(i);
+            System.out.print((char) ('A' + i) + " ");
+
             for(Cell c : l) {
-                if (c.isHit()) {
+                if (c.isHit() && c.isTank()) {
                     System.out.print("[X]");
-                } else if (c.isTank()) {
-                    System.out.print("[" + c.getTankID() + "]");
-                } else  {
+                } else if (c.isHit() && !c.isTank()) {
+                    System.out.print("[ ]");
+                } else {
                     System.out.print("[~]");
                 }
             }
