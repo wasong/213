@@ -140,7 +140,7 @@ public class Field {
         return target.handleOnHit();
     }
 
-    public static void showGrid() {
+    public static void showGrid(boolean endMap, boolean isCheating) {
         // offset row label
         System.out.print("  ");
 
@@ -154,13 +154,26 @@ public class Field {
             System.out.print((char) ('A' + i) + " ");
 
             for(Cell c : l) {
-                if (c.isHit() && c.isTank()) {
-                    System.out.print("[X]");
-                } else if (c.isHit() && !c.isTank()) {
-                    System.out.print("[ ]");
+                if (endMap || isCheating) {
+                    if (c.isHit() && c.isTank()) {
+                        System.out.print("[X]");
+                    } else if (c.isHit() && !c.isTank() && endMap) {
+                        System.out.print("[m]");
+                    } else if (c.isTank()) {
+                        System.out.print("[" + c.getTankID() + "]");
+                    } else  {
+                        System.out.print(endMap ? "[ ]" : "[.]");
+                    }
                 } else {
-                    System.out.print("[~]");
+                    if (c.isHit() && c.isTank()) {
+                        System.out.print("[X]");
+                    } else if (c.isHit() && !c.isTank()) {
+                        System.out.print("[ ]");
+                    } else {
+                        System.out.print("[~]");
+                    }
                 }
+
             }
             System.out.println();
         }

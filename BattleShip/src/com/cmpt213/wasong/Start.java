@@ -8,7 +8,7 @@ public class Start {
     private static int tanks = 5;
     private static boolean isCheating = false;
     private static List<Tank> tankList = new ArrayList<>();
-    private static Fortress fortress = new Fortress(1500);
+    private static Fortress fortress = new Fortress(500);
     private static boolean isFinished = false;
     private static boolean hasWon = false;
 
@@ -42,7 +42,9 @@ public class Start {
         // initialize the playing field
         Field.generateGrid();
         tankList = Field.generateTanks(tanks);
-        Field.showGrid();
+
+        // show grid if cheating
+        if (isCheating) Field.showGrid(isFinished, isCheating);
 
         while (!isFinished) {
             /******** Get User Move START *******/
@@ -90,7 +92,7 @@ public class Start {
             /******** Handle Enemy Move END *******/
 
             checkGameState();
-            Field.showGrid();
+            Field.showGrid(false, false);
         }
 
         if (hasWon) {
@@ -98,5 +100,6 @@ public class Start {
         } else {
             System.out.println("Oh no! Your fortress is down! You have lost!");
         }
+        Field.showGrid(true, false);
     }
 }
