@@ -1,0 +1,169 @@
+1. Intro To Java
+Know Java & OOD terminology/ideas:
+  field
+    holds the member variables of the class
+  method
+    the member functions associated with the class
+  public
+    member fields/methods allowed to be invoked outside of the class
+  private
+    member fields/methods only available within the class
+  constructor
+    used to instantiate the class and provide initial field values
+  one name per item (argument matches fields)
+    more intuitive to read because they mean the same thing (value and contextually)
+  accessor
+    methods that expose private class fields
+  mutators
+    methods that mutate/modify private class fields
+  classes
+    an object that holds its respective constructor, fields, methods, etc, and has a purpose
+    ie. a class named StudentList will most likely have an array of students as a member field
+    and have accessors to return the list or a single student
+  objects
+    a data type that inherits from Object and thus has access to Object methods
+  instantiating objects
+    creating a new type Object and holding a reference to it
+  object references
+    instead of instantiating a new object, variables can reference the same object and they
+    can all operate on the one object
+  basics idea of a class's package
+    packages are code that can be imported to a class and provide extra features
+  main()
+    the first function that is ran when running the Java program
+  JavaDoc (for class-level comment)
+    provides a documentation on a class' purpose and
+  static methods and static fields
+    can be accessed without instantiating the class
+  access rules
+    static methods cannot access non-static fields/members
+    * non-static methods can access static fields/members
+  basic exceptions
+    some functions throw Exceptions of different types ie. NullPointerExceptino
+    throw custom Exception
+  Know Java primitive types, promotion, demotion, casting, constants.
+    primitives: Long, Float, Integer, Char, etc
+    promotion: going from a smaller primitive to a larger primitive ie. Integer to Float
+    demotion: vice versa, Double -> Integer
+    casting: explicitly convert a data type to something else ie. (char) <someInt>
+  Know Java's memory management (basic idea of garbage collection)
+    unreferenced objects will be cleaned up
+    some need to be closed ie. File readers or else memory leak
+  Know how method parameters work with primitive and object types (pass by....)
+    passing primitives will be pass by value (create new primitive)
+    objects will default to pass by reference
+  Know how to work with a Java array: create, access, get size, pass to method.
+    create: Type[] arr = new Type[size];
+    access: arr[index]
+    get size: arr.length
+    pass to method: func(Type[] arr)
+    Notes:
+      Work with one data type
+      fixed in size
+      throws exception when out of range
+  Know ArrayList: how to create, add, remove, get size, get element
+    create: List<Type> arr = new ArrayList<>();
+    add: arr.add(element)
+    get size: arr.size()
+    remove: arr.remove(index)
+    get element: arr.get(index)
+  Know for-each loop structure.
+    for (<Type> var : arr) {...}
+  Know String: create, immutable, access a character,
+  concatenation, operator overloading, get length, equals() vs ==.
+    create: String str = ""
+    Strings are immutable, if you have to mutate, they create a new String object
+    multiple ways to access: by bracket index [], charAt(index) for starters
+    concatenation: str.concat(someStr) returns new concatenated string
+    operator overloading: only allowed on String +, +=
+    get length: str.length()
+    equals(): returns true or false if a string is equal to another string
+    ==: tests if the string references are equal
+  Know how to parse a string to an int
+    Integer.parseInt(str)
+  Know how to print to the screen, and read form the keyboard (Scanner).
+    System.out.println(str)
+    Scanner s = new Scanner(System.in)
+      s.next() // returns string
+  Understand reading complete lines and working with whitespace.
+    s.nextLine(): will read the full line
+    s.hasNextLine(): will test if there is a new line
+  Understand closing a scanner.
+    Do not need to close a scanner constructed with System.in
+  Understand files, and working with scanner on a file.
+    new File(filepath): refers to the file at the filepath
+    new PrintWriter(file): creates a class able to write to the file
+      make sure to close PrintWriter: (PrintWriter) writer.close()
+    new Scanner(file): is able to take the file contents and handle similar to input
+      ie. hasNextLine(), nextLine() works as expected
+  Know basic try/catch and exceptions.
+    try {
+      // some code
+    } catch (someExceptionType e) {
+      // handle the exception
+    }
+  Know what is a static factory method, and how to use one.
+    SFM: simple a static method that returns an instance of a class
+    Naive ex:
+      class SomeClass {
+        // private fields
+        private SomeClass(...args) {
+          // private constructor
+          // assign fields
+        }
+        public static SomeClass createWithXParams(...args) {
+          return new SomeClass(...mutatedArgs)
+        }
+      }
+
+      // invoke later
+      SomeClass foo = SomeClass.createWithXParams(...args)
+  Know what is clean code, and understand use of a coding standard/style guide.
+    clean code: proper spacing, indents, comprehensible naming scheme, consistent
+      layout of properties (class fields, where each type of methods go, etc), file/folder
+      structure
+    Purpose: maintainable, friendly to understand for other developers, good practice,
+      improve efficiency in dev env, improve performance in build
+  Do not need to memorize the course's coding style guide, but should know the
+  basics of what is expected in terms of writing clean code.
+
+2. Anon classes
+  If given an interface, know how to instantiate anonymous classes/objects and use those, such as how the Strategy pattern is used.
+
+  Know how to pass a Java program command line arguments from the command line,
+  and how to receive and process them in a Java program. Don’t need to memorize the
+  folder you have to be into run it.
+
+  Know how to print to the screen (i.e., System.out) using print(), println(), and printf()
+
+  Know conversion specifiers: %d, %x, %f, %s, %b, %n
+
+  Know formatting with columns, and with commas.
+
+  Understand the wrapper classes for primitives; know Integer.
+
+  File:
+    Know purpose of File class and understand methods shown in slides.
+
+    Know what a Java interface is.
+
+    Understand how to use the FileFilter interface.
+      Given the interface, be able to apply it by creating a named class, or an
+      anonymous class.
+
+      Able to use a named object, or an anonymous object for listFiles().
+
+      Know the syntax for each option.
+  Comparable:
+    Know the purpose of the Comparable interface.
+
+    If given the interface, able to use it with Collections.sort() using
+    named/anonymous objects/classes
+
+  Comparator
+    Know the purpose of the Comparator interface.
+
+    If given the interface, able to use it with Collections.sort() using
+    named/anonymous objects/classes
+
+  Understand the Strategy pattern as it applies to examples we saw in lecture.
