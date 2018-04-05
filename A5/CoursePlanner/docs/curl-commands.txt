@@ -4,8 +4,8 @@ curl -i -H "Content-Type: application/json" -X GET localhost:8080/hello
 
 # Add new pledge
 curl -i -H "Content-Type: application/json" -X POST -d '{
-        "SUBJECT": "Honest Harry",
-        "CATALOGNUMBER": "I vote to change the world!"
+        "Subject": "Honest Harry",
+        "CatalogNumber": "I vote to change the world!"
     }' localhost:8080/pledges
 
 # List all pledges
@@ -18,7 +18,7 @@ curl -i -H "Content-Type: application/json" \
 
 # Change one pledge
 curl -i -H "Content-Type: application/json" -X POST -d '{
-        "SUBJECT": "Little Lucy",
-        "CATALOGNUMBER": "I vote for the future!"
+        "Subject": "Little Lucy",
+        "CatalogNumber": "I vote for the future!"
     }' localhost:8080/pledges/2
 
