@@ -1,5 +1,6 @@
 package ca.coursePlanner.controllers;
 
+import ca.coursePlanner.model.Course;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 
 @RestController
 public class CourseController {
-    private List<List<String>> courses = new ArrayList<>();
+    private List<Course> courses = new ArrayList<>();
 
     public CourseController() {
         this.readCSV();
@@ -26,6 +27,7 @@ public class CourseController {
         final String SOURCE_CSV = "/Users/p206849/Desktop/school/213/A5/CoursePlanner/data/course_data_2018.csv";
         String line;
         String delimiter = "[,\"]";
+
         // on init parse data
         try (BufferedReader buffer = new BufferedReader(new FileReader(SOURCE_CSV))) {
             while((line = buffer.readLine()) != null) {
@@ -44,20 +46,25 @@ public class CourseController {
                     String[] profs = Arrays.copyOfRange(course, 6, course.length - 1);
                     String prof = Arrays.stream(profs).collect(Collectors.joining(", "));
 
-                    System.out.println(prof);
+                    // create new course data
+                    List<String> updatedCourse = new ArrayList<>(Arrays.asList(Arrays.copyOfRange(course, 0, 6)));
+                    updatedCourse.add(prof);
+                    updatedCourse.add(course[course.length - 1]);
+
+                    course = updatedCourse.toArray(new String[0]);
                 }
                 for (String s : course) System.out.print(s.trim() + " | ");
                 System.out.println();
 
-                courses.add(Arrays.asList(course));
+                courses.add(createCourse(course));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void groupCourses() {
-
+    private Course createCourse(String[] course) {
+        return new Course(course[0], course[1], course[2], course[3], course[4], course[5], course[6], course[7]);
     }
 
     @GetMapping("/api/dump-model")

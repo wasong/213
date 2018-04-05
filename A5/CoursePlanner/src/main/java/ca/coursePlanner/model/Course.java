@@ -1,19 +1,19 @@
 package ca.coursePlanner.model;
 
 public class Course {
-    private int Semester;
+    private String Semester;
     private String Subject;
     private String CatalogNumber;
     private String Location;
-    private int EnrolmentCapacity;
-    private int EnrolmentTotal;
+    private String EnrolmentCapacity;
+    private String EnrolmentTotal;
     private String Instructors;
     private String ComponentCode;
 
     public Course(
-            int Semester,
-            int EnrolmentCapacity,
-            int EnrolmentTotal,
+            String Semester,
+            String EnrolmentCapacity,
+            String EnrolmentTotal,
             String Subject,
             String CatalogNumber,
             String Location,
@@ -26,15 +26,15 @@ public class Course {
         this.Subject = Subject;
         this.CatalogNumber = CatalogNumber;
         this.Location = Location;
-        // TODO: handle comma separated instructors
+        this.Instructors = Instructors;
         this.ComponentCode = ComponentCode;
     }
 
-    public long getSemester() {
+    public String getSemester() {
         return Semester;
     }
 
-    public void setSemester(int SEMESTER) {
+    public void setSemester(String SEMESTER) {
         this.Semester = SEMESTER;
     }
 
@@ -58,15 +58,21 @@ public class Course {
 
     public void setLocation(String LOCATION) { this.Location = LOCATION; }
 
-    public int getEnrolmentCapacity() { return EnrolmentCapacity; }
+    public String getEnrolmentCapacity() { return EnrolmentCapacity; }
 
-    public void setEnrolmentCapacity(int ENROLMENTCAPACITY) { this.EnrolmentCapacity = ENROLMENTCAPACITY; }
+    public void setEnrolmentCapacity(String ENROLMENTCAPACITY) { this.EnrolmentCapacity = ENROLMENTCAPACITY; }
 
-    public int getEnrolmentTotal() { return EnrolmentTotal; }
+    public String getEnrolmentTotal() { return EnrolmentTotal; }
 
-    public void setEnrolmentTotal(int ENROLMENTTOTAL) { this.EnrolmentTotal = ENROLMENTTOTAL; }
+    public void setEnrolmentTotal(String ENROLMENTTOTAL) { this.EnrolmentTotal = ENROLMENTTOTAL; }
 
-    // TODO: instructors
+    public String getInstructors() {
+        return Instructors;
+    }
+
+    public void setInstructors(String instructors) {
+        Instructors = instructors;
+    }
 
     public String getComponentCode() { return ComponentCode; }
 
