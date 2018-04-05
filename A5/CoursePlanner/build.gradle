@@ -1,4 +1,4 @@
-group 'PledgeToVote'
+group 'CoursePlanner'
 version '1.0-SNAPSHOT'
 
 buildscript {

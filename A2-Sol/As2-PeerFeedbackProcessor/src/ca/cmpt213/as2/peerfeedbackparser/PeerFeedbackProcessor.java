@@ -46,12 +46,12 @@ public class PeerFeedbackProcessor {
             targetJsonFile = new File(targetCsvFile.getAbsolutePath().replaceFirst(".csv", ".json"));
         }
 
-        // Defaults for testing:
-//        else if (args.length == 0) {
-//            sourceFolder = new File (SOURCE_FOLDER);
-//            targetCsvFile = new File("output/" + TARGET_CSV_FOR_INSTRUCTOR_FILE);
-//            targetJsonFile = new File("output/" + TARGET_JSON_FOR_COURSYS_FILE);
-//        }
+//         Defaults for testing:
+        else if (args.length == 0) {
+            sourceFolder = new File (SOURCE_FOLDER);
+            targetCsvFile = new File("output/" + TARGET_CSV_FOR_INSTRUCTOR_FILE);
+            targetJsonFile = new File("output/" + TARGET_JSON_FOR_COURSYS_FILE);
+        }
 
         else {
             ErrorHandler.displayErrorAndExit(
