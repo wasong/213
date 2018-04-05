@@ -4,7 +4,6 @@ import ca.coursePlanner.model.Pledge;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -16,7 +15,6 @@ public class PledgeController {
 
     @GetMapping("/hello")
     public String getHelloMessage() {
-        System.out.println("From hello!");
         return "Hello Spring Boot world!";
     }
 
