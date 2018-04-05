@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="As2-PeerFeedbackProcessor:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/As2_PeerFeedbackProcessor_jar</output-path>
+    <root id="archive" name="As2-PeerFeedbackProcessor.jar">
+      <element id="module-output" name="As2-PeerFeedbackProcessor" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/gson-2.8.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

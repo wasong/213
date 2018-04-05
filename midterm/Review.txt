@@ -133,37 +133,214 @@ Know Java & OOD terminology/ideas:
   Know how to pass a Java program command line arguments from the command line,
   and how to receive and process them in a Java program. Don’t need to memorize the
   folder you have to be into run it.
-
+    java class: java someProgram.class arg1 arg2
+    jar file: java -jar someProgram.jar arg1 arg2
+    parse: in main(), the string array argument that is passed in is tokenized and each arg is an element
   Know how to print to the screen (i.e., System.out) using print(), println(), and printf()
-
-  Know conversion specifiers: %d, %x, %f, %s, %b, %n
-
+    System.out.print(str)
+    System.out.println(str)
+    System.out.printf(strThatIncludesAConversionSpecifier, [respectiveValues])
+  Know conversion specifiers:
+    %d: int,
+    %x: hex,
+    %f: float,
+    %s: string,
+    %b: bool,
+    %n: newline,
   Know formatting with columns, and with commas.
-
+    *
   Understand the wrapper classes for primitives; know Integer.
-
+    Allow autoboxing, unboxing
+    primitive -> object and vice versa
   File:
     Know purpose of File class and understand methods shown in slides.
-
+      File class works with file paths
     Know what a Java interface is.
-
+      Different classes can implement an Interface to fulfil a purpose in their own way
+      ie. a Fly and a Telemarketer are not related but they can both implement an Interface that has
+        a function, `pester` and implement that in their own way
     Understand how to use the FileFilter interface.
       Given the interface, be able to apply it by creating a named class, or an
       anonymous class.
+        named class:
+          Class A implements FileFilter {
+            @Override
+            public static boolean accept(File file) {
+              return file.getName().endsWith('.txt')
+            }
+          }
 
+          FileFilter namedClass = new A()
+
+        anonymous class:
+          FileFilter anonClass = new FileFilter() {
+            @Override
+            public static boolean accept(File file) {
+              return file.getName().endsWith('.txt')
+            }
+          }
       Able to use a named object, or an anonymous object for listFiles().
-
+        named/anon:
+          Files[] fileList = folder.listFiles(fileFilter)
+        lambda:
+          Files[] fileList = folder.listFiles((f) -> f.getName().endsWith('.txt'))
       Know the syntax for each option.
   Comparable:
     Know the purpose of the Comparable interface.
-
+      allow elements to be sorted using the Collections objects .sort()
     If given the interface, able to use it with Collections.sort() using
     named/anonymous objects/classes
+      each element must implement the compareTo() method from Comparable using @Override
 
+      * named class:
+        class Type implements Comparable<Type> {
+          // ...fields
+          // ...methods
+
+          @Override
+          public int compareTo(Type other) {
+            // return some comparison
+          }
+        }
+
+        List<Type> arr = new ArrayList<>()
+
+        Java.utils.Collections.sort(arr) // sort now uses the overriden method compareTo
+
+      anonymous class:
+        Type t = new Type() {
+          @Override
+          public int compareTo(Type other) {
+            // return some comparison
+          }
+        }
+
+        List<Type> arr = new ArrayList<>()
+
+        Java.utils.Collections.sort(arr)
   Comparator
     Know the purpose of the Comparator interface.
-
+      purpose: multiple criteria for sorting using two objects
     If given the interface, able to use it with Collections.sort() using
     named/anonymous objects/classes
 
+    named:
+      // note this is not Type, but a new class for Comparator
+      class TypeComparator implements Comparator<Type> {
+        // ...contents
+        @Override
+        public int compare(Type t1, Type t2) {
+          // return some comparison between t1 and t2
+        }
+      }
+
+      List<Type> arr = new ArrayList<>()
+
+      Collections.sort(arr, new TypeComparator<Type>()) // note the additional arg
+
+    anonymous:
+      List<Type> arr = new ArrayList()
+      Collections.sort(arr, new Comparator<Type>() {
+        @Override
+        public int compare(Type t1, Type t2) {
+          // return some comparison between t1 and t2
+        }
+      })
+
   Understand the Strategy pattern as it applies to examples we saw in lecture.
+    Purpose: Strategy pattern allows programs to change algorithms in runtime
+      based on the situation
+
+3. OOD Design Process
+  Know terminology: OOD, OOP, Domain, (OOPS optional :) )
+  Understand 3 phases: Analysis, Design, Implementation
+    Know goal, process, and products of each
+    Know why design is a “wicked”, sloppy, and heuristic process.
+    Know what skeleton code is. Know continuous vs big-bang integration.
+  Class Design:
+    Know terms: class, object, state, behaviour, identity, instance
+  Able to identify classes via finding nouns, identifying utility classes, systems, and
+  agents.
+  Understand when to, and when not to use String
+  Know enums (able to create, use, and explain benefits)
+  Able to assign responsibilities to classes (verbs)
+    Able to work through tradeoffs of assigning functionality into classes.
+  Class Relationships
+    Know dependency, how to explain it, how to identify it. Know coupling.
+    Know aggregation, how to explain it, how to identify it.
+    Know inheritance
+
+4. OOD Design Techniques
+  Use Cases
+    Know their purpose; able to identify tasks for which to create use cases.
+    Able to write a use case, including variations as needed.
+  CRC Cards
+    Know their full name, their purpose, and how to create them.
+    Know their limitation.
+  UML Class Diagram
+    Know its purpose.
+    Know how to draw one including:
+    3 sections, methods, fields
+    relationships: dependency, aggregation, inheritance (class “is-a” and interface
+    “implements”)
+    how to indicate an interface
+    how to indicate the multiplicity of aggregation connections (Ex: 1, 0..1, *)
+    add a comment to a diagram
+    show objects
+  Know how to provide different levels of detail in a UML class diagram such as:
+    Just the class names and relationships
+    Class name with field and method names with visibility modifiers
+    All names, relationships, and type information
+
+5. Class Design
+  Able to consider class design alternatives
+    Understand ideas behind the three different Day class implementations.
+    Know what deprecated means
+  Encapsulation
+    Know benefit of encapsulation, able to give a definition for it.
+    Able to recognize when it's violated.
+    Know immutable: how to recognize it, how to code it, benefit of it.
+      Understand shared reference problem, and why clone() can be used to solve it.
+    Know the meaning of a final variable, and what it prevents from changing.
+  Understand and able to apply the command/query separation guideline.
+    Know what a command and query are.
+  Know iterators, their purpose, and be able to use them.
+    Able to explain how it violates command/query guideline. Understand how this can lead to problems.
+    Know what a side effect is
+  Know purpose and use of Iterable
+    If given the interface, able to create and use an Iterable class.
+    Able to create functions in a class which return an anonymous Iterable object;
+    understand why you might want to.
+    If given the Collections.unmodifiableCollection() prototype, able to
+    make and use an unmodifiable collection; know why we'd want to.
+    If given the Iterator interface, able to create a simple custom iterator.
+    Understand class relationships for a system using Iterable and Iterator
+
+6. Interface Quality
+  Know two perspectives of looking at a class.
+  Know the four ways of analyzing public interface quality:
+    Know cohesion.
+      Know the single responsibility principle
+      Able to apply these ideas to improve a class design.
+    Know completeness (convenience).
+      Able to recognize when an interface is incomplete.
+    Know clarity: intention revealing names, meaningful abstractions.
+    Know consistency: able to identify and correct inconsistent features of an
+    interface.
+  Know the 5 “other ways to review quality”.
+  Able to use these ideas to critique code.
+
+7. Contract vs Defensive
+  Know programming by contract
+    Able to give a definition for it, recognize it, and explain it.
+    Know how it assigns responsibility for correctness,
+    Know what are preconditions, postconditions,
+  Know defensive programming
+    Know how it assigns responsibility for maintaining a consistent state in an object,
+    Know asserts and how to use them for defensive programming.
+  Understand all the stated ways of handling errors.
+  Know asserts
+    What they are, how to write them
+    Know when to use them, and when not to use them.
+    Understand how to enable them in the JVM
+    Understand the limitations of asserts
