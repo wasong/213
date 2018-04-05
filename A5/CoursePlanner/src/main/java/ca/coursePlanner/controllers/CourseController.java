@@ -17,7 +17,7 @@ import java.util.List;
 public class CourseController {
     private final String SOURCE_CSV = "/Users/p206849/Desktop/school/213/A5/CoursePlanner/data/course_data_2018.csv";
     private String line = "";
-    private String delimiter = ",";
+    private String delimiter = ",|\"";
 
     private List<List<String>> courses = new ArrayList<>();
 
@@ -27,7 +27,16 @@ public class CourseController {
             while((line = buffer.readLine()) != null) {
                 String[] course = line.split(delimiter);
 
-                System.out.println(course.length);
+                if (course.length > 8) {
+                    System.out.println("Many profs");
+                    course = Arrays.stream(course).filter(x -> !x.equals("")).toArray(String[]::new);
+
+                    for (String s : course) System.out.print(s.trim() + " | ");
+                    System.out.println();
+                } else {
+                    for (String s : course) System.out.print(s.trim() + " | ");
+                    System.out.println();
+                }
 
                 courses.add(Arrays.asList(course));
             }
