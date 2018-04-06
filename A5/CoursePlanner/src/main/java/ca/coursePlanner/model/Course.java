@@ -12,20 +12,20 @@ public class Course {
 
     public Course(
             String Semester,
-            String EnrolmentCapacity,
-            String EnrolmentTotal,
             String Subject,
             String CatalogNumber,
             String Location,
+            String EnrolmentCapacity,
+            String EnrolmentTotal,
             String Instructors,
             String ComponentCode
     ) {
         this.Semester = Semester;
-        this.EnrolmentCapacity = EnrolmentCapacity;
-        this.EnrolmentTotal = EnrolmentTotal;
         this.Subject = Subject;
         this.CatalogNumber = CatalogNumber;
         this.Location = Location;
+        this.EnrolmentCapacity = EnrolmentCapacity;
+        this.EnrolmentTotal = EnrolmentTotal;
         this.Instructors = Instructors;
         this.ComponentCode = ComponentCode;
     }
@@ -38,7 +38,7 @@ public class Course {
         this.Semester = SEMESTER;
     }
 
-    public String getSubjet() {
+    public String getSubject() {
         return Subject;
     }
 
