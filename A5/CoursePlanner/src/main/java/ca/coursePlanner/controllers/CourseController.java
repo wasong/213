@@ -23,7 +23,19 @@ public class CourseController {
         this.readCSV();
         this.groupCourses();
 
-        subjects.forEach((k, v) -> System.out.println(v.getSubject()));
+        // useful to get all and some courses
+        Subject cmpt = subjects.get("CMPT");
+//        List<List<Course>> allCmptCourses = cmpt.getAllCourses();
+//        for (List<Course> cl : allCmptCourses) {
+//            for (Course c : cl) {
+//                System.out.println(c.getCatalogNumber() + ": " + c.getComponentCode());
+//            }
+//        }
+
+        List<Course> courses213 = cmpt.getCourseByCatalog("213");
+        for (Course c : courses213) {
+            System.out.println(c.getSemester() + " - " + c.getInstructors());
+        }
     }
 
     private void readCSV() {
@@ -74,7 +86,6 @@ public class CourseController {
 
             Subject subject = subjects.putIfAbsent(key, val);
             if (subject != null) {
-                // associated
                 subject.addCourse(c);
             } else {
                 subject = subjects.get(c.getSubject());

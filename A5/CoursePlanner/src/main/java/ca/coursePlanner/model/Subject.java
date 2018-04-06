@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Subject {
-    private List<Course> list = new ArrayList<>();
     private HashMap<String, List<Course>> courses = new HashMap<>();
     private String subject;
 
@@ -18,6 +17,29 @@ public class Subject {
     }
 
     public void addCourse(Course course) {
-        list.add(course);
+        String key = course.getCatalogNumber();
+        List<Course> courseList;
+        boolean exists = this.courses.containsKey(key);
+
+        if (exists) {
+            courseList = this.courses.get(key);
+            courseList.add(course);
+        } else {
+            courseList = new ArrayList<>();
+            courseList.add(course);
+            this.courses.put(key, courseList);
+        }
+    }
+
+    public List<List<Course>> getAllCourses() {
+        List<List<Course>> allCourses = new ArrayList<>();
+
+        this.courses.forEach((k, v) -> allCourses.add(v));
+
+        return allCourses;
+    }
+
+    public List<Course> getCourseByCatalog(String catalogNumber) {
+        return this.courses.get(catalogNumber);
     }
 }
