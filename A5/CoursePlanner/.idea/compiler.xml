@@ -4,8 +4,6 @@
     <bytecodeTargetLevel>
       <module name="CoursePlanner_main" target="1.8" />
       <module name="CoursePlanner_test" target="1.8" />
-      <module name="PledgeToVote_main" target="1.8" />
-      <module name="PledgeToVote_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

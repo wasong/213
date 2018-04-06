@@ -15,11 +15,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
-public class CourseController {
+public class CourseRestController {
     private List<Course> courses = new ArrayList<>();
     private HashMap<String, Subject> subjects = new HashMap<>();
 
-    public CourseController() {
+    public CourseRestController() {
         this.readCSV();
         this.groupCourses();
 
@@ -32,10 +32,10 @@ public class CourseController {
 //            }
 //        }
 
-        List<Course> courses213 = cmpt.getCourseByCatalog("213");
-        for (Course c : courses213) {
-            System.out.println(c.getSemester() + " - " + c.getInstructors());
-        }
+//        List<Course> courses213 = cmpt.getCourseByCatalog("213");
+//        for (Course c : courses213) {
+//            System.out.println(c.getSemester() + " - " + c.getInstructors());
+//        }
     }
 
     private void readCSV() {
@@ -92,6 +92,13 @@ public class CourseController {
                 subject.addCourse(c);
             }
         }
+    }
+
+    private List<String> getAllSubjects() {
+        List<String> allSubjects = new ArrayList<>();
+        subjects.forEach((k, v) -> allSubjects.add(k));
+
+        return allSubjects;
     }
 
     @GetMapping("/api/dump-model")
