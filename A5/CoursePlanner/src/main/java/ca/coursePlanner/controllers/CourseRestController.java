@@ -1,14 +1,12 @@
 package ca.coursePlanner.controllers;
 
 import ca.coursePlanner.model.About;
-import ca.coursePlanner.model.Course;
+import ca.coursePlanner.model.Courses.Course;
+import ca.coursePlanner.model.Courses.CourseList;
 import ca.coursePlanner.model.Departments.Department;
 import ca.coursePlanner.model.Departments.DepartmentList;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -101,6 +99,15 @@ public class CourseRestController {
     @GetMapping("/api/departments")
     public List<Department> departments() {
         return departmentList.getDepartments();
+    }
+
+    @GetMapping("/api/departments/{id}/courses")
+    public List<CourseList> getDeptCourses(@PathVariable("id") long deptId) {
+        Department dept = departmentList.findDepartmentById(deptId);
+
+        if (dept == null) throw new IllegalArgumentException();
+
+        return dept.getAllCourses();
     }
 
     // Create Exception Handle

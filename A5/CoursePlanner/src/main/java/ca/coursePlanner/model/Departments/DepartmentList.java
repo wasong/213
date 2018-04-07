@@ -14,6 +14,13 @@ public class DepartmentList {
         return departments;
     }
 
+    public Department findDepartmentById(long deptId) {
+        for(Department d : departments) {
+            if (d.getDeptId() == deptId) return d;
+        }
+        return null;
+    }
+
     public Department doesDeptExist(String name) {
         for(Department d : departments) {
             if (d.getName().equals(name)) return d;

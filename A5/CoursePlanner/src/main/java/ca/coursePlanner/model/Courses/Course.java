@@ -1,4 +1,4 @@
-package ca.coursePlanner.model;
+package ca.coursePlanner.model.Courses;
 
 public class Course {
     private String Semester;

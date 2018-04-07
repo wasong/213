@@ -1,9 +1,8 @@
 package ca.coursePlanner.model.Departments;
 
-import ca.coursePlanner.model.Course;
+import ca.coursePlanner.model.Courses.Course;
+import ca.coursePlanner.model.Courses.CourseList;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Department {
@@ -26,5 +25,9 @@ public class Department {
 
     public void addCourse(Course course) {
         courses.add(course);
+    }
+
+    public List<CourseList> getAllCourses() {
+        return courses.getAllCourses();
     }
 }
