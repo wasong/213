@@ -1,7 +1,9 @@
 package ca.coursePlanner.controllers;
 
+import ca.coursePlanner.model.About;
 import ca.coursePlanner.model.Course;
-import ca.coursePlanner.model.Subject;
+import ca.coursePlanner.model.Departments.Department;
+import ca.coursePlanner.model.Departments.DepartmentList;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,30 +14,21 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 @RestController
 public class CourseRestController {
-    private List<Course> courses = new ArrayList<>();
-    private HashMap<String, Subject> subjects = new HashMap<>();
+    private List<Course> courses = new ArrayList<>(); // all courses for grouping purposes
+    private AtomicLong nextId = new AtomicLong();
+
+    // TODO: make subjects into class
+    private DepartmentList departmentList = new DepartmentList();
 
     public CourseRestController() {
         this.readCSV();
         this.groupCourses();
-
-        // useful to get all and some courses
-        Subject cmpt = subjects.get("CMPT");
-//        List<List<Course>> allCmptCourses = cmpt.getAllCourses();
-//        for (List<Course> cl : allCmptCourses) {
-//            for (Course c : cl) {
-//                System.out.println(c.getCatalogNumber() + ": " + c.getComponentCode());
-//            }
-//        }
-
-//        List<Course> courses213 = cmpt.getCourseByCatalog("213");
-//        for (Course c : courses213) {
-//            System.out.println(c.getSemester() + " - " + c.getInstructors());
-//        }
+        System.out.println(departmentList.getDepartments().size());
     }
 
     private void readCSV() {
@@ -81,29 +74,33 @@ public class CourseRestController {
 
     private void groupCourses() {
         for (Course c : courses) {
-            String key = c.getSubject();
-            Subject val = new Subject(key);
+            String name = c.getSubject();
 
-            Subject subject = subjects.putIfAbsent(key, val);
-            if (subject != null) {
-                subject.addCourse(c);
+            Department queryDept = departmentList.doesDeptExist(name);
+            if (queryDept == null) {
+                long deptId = nextId.incrementAndGet();
+                Department dept = new Department(name, deptId);
+                departmentList.addDepartment(dept);
             } else {
-                subject = subjects.get(c.getSubject());
-                subject.addCourse(c);
+                queryDept.addCourse(c);
             }
+
         }
-    }
-
-    private List<String> getAllSubjects() {
-        List<String> allSubjects = new ArrayList<>();
-        subjects.forEach((k, v) -> allSubjects.add(k));
-
-        return allSubjects;
     }
 
     @GetMapping("/api/dump-model")
     public String dumpModel() {
         return "dump model here";
+    }
+
+    @GetMapping("/api/about")
+    public About about() {
+        return new About("Andrew Song", "CMPT 213 App");
+    }
+
+    @GetMapping("/api/departments")
+    public List<Department> departments() {
+        return departmentList.getDepartments();
     }
 
     // Create Exception Handle
