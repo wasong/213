@@ -1,10 +1,14 @@
 package ca.coursePlanner.controllers;
 
 import ca.coursePlanner.model.About;
-import ca.coursePlanner.model.Courses.Course;
-import ca.coursePlanner.model.Courses.CourseList;
-import ca.coursePlanner.model.Departments.Department;
-import ca.coursePlanner.model.Departments.DepartmentList;
+import ca.coursePlanner.model.Course.CourseList_;
+import ca.coursePlanner.model.Course.Course_;
+import ca.coursePlanner.model.Course.DeptCourseList_;
+import ca.coursePlanner.model.Section.CourseSectionList_;
+import ca.coursePlanner.model.Section.SectionList_;
+import ca.coursePlanner.model.Section.Section_;
+import ca.coursePlanner.model.Departments.Department_;
+import ca.coursePlanner.model.Departments.DepartmentList_;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,11 +21,14 @@ import java.util.stream.Collectors;
 
 @RestController
 public class CourseRestController {
-    private List<Course> courses = new ArrayList<>(); // all courses for grouping purposes
-    private AtomicLong nextId = new AtomicLong();
+    private List<Section_> courses = new ArrayList<>(); // all courses for grouping purposes
+    private AtomicLong deptId = new AtomicLong();
+    private AtomicLong courseId = new AtomicLong(100);
+    private AtomicLong courseOfferingId = new AtomicLong(1000);
 
-    // TODO: make subjects into class
-    private DepartmentList departmentList = new DepartmentList();
+    private DepartmentList_ departmentList = new DepartmentList_(); // CMPT, MACM, MATH, ...
+    private DeptCourseList_ deptCourseList = new DeptCourseList_(); // CMPT 213, CMPT 225, ...
+    private CourseSectionList_ courseSectionList = new CourseSectionList_(); // CMPT 213 LEC, CMPT 213 LAB, ...
 
     public CourseRestController() {
         this.readCSV();
@@ -59,28 +66,63 @@ public class CourseRestController {
 //                for (String s : course) System.out.print(s + " | ");
 //                System.out.println();
 
-                courses.add(createCourse(course));
+                courses.add(createSection(course));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private Course createCourse(String[] course) {
-        return new Course(course[0], course[1], course[2], course[3], course[4], course[5], course[6], course[7]);
+    private Section_ createSection(String[] course) {
+        return new Section_(course[0], course[1], course[2], course[3], course[4], course[5], course[6], course[7], courseOfferingId.incrementAndGet());
     }
 
     private void groupCourses() {
-        for (Course c : courses) {
+        for (Section_ c : courses) {
             String name = c.getSubject();
 
-            Department queryDept = departmentList.doesDeptExist(name);
+            // create departments
+            Department_ queryDept = departmentList.doesDeptExist(name);
             if (queryDept == null) {
-                long deptId = nextId.incrementAndGet();
-                Department dept = new Department(name, deptId);
+                long deptId = this.deptId.incrementAndGet();
+                Department_ dept = new Department_(name, deptId);
+                queryDept = dept;
                 departmentList.addDepartment(dept);
+            }
+
+            // create department courses
+            CourseList_ queryCourseList = deptCourseList.getCourseListByDeptId(queryDept.getDeptId());
+            Course_ queryCourse;
+            if (queryCourseList == null) {
+                // create courseList
+                CourseList_ newCourseList = new CourseList_(queryDept.getDeptId());
+                // add first course to this courseList
+                Course_ newCourse = new Course_(courseId.incrementAndGet(), queryDept.getDeptId(), c.getCatalogNumber());
+                newCourseList.addCourse(newCourse);
+                queryCourse = newCourseList.getCourseByName(c.getCatalogNumber());
+                deptCourseList.addCourseList(newCourseList);
             } else {
-                queryDept.addCourse(c);
+                // courseList exists so check if course exists
+                queryCourse = queryCourseList.getCourseByName(c.getCatalogNumber());
+                if (queryCourse == null) {
+                    // only add if does not exist
+                    Course_ newCourse = new Course_(courseId.incrementAndGet(), queryDept.getDeptId(), c.getCatalogNumber());
+                    queryCourse = newCourse;
+                    queryCourseList.addCourse(newCourse);
+                }
+            }
+
+            // now handle section
+            SectionList_ querySectionList = courseSectionList.getSectionListByCourseId(queryCourse.getCourseId());
+            if (querySectionList == null) {
+                // no sections for this course
+                SectionList_ newSectionList = new SectionList_(queryCourse.getCourseId());
+                newSectionList.addSection(c);
+//                querySectionList = newSectionList;
+                courseSectionList.addSectionList(newSectionList);
+            } else {
+                // section exists
+                querySectionList.addSection(c);
             }
 
         }
@@ -97,17 +139,23 @@ public class CourseRestController {
     }
 
     @GetMapping("/api/departments")
-    public List<Department> departments() {
+    public List<Department_> departments() {
         return departmentList.getDepartments();
     }
 
     @GetMapping("/api/departments/{id}/courses")
-    public List<CourseList> getDeptCourses(@PathVariable("id") long deptId) {
-        Department dept = departmentList.findDepartmentById(deptId);
+    public List<Course_> getDeptCourses(@PathVariable("id") long deptId) {
+        return deptCourseList.getCourseListByDeptId(deptId).getCourseList();
+    }
 
-        if (dept == null) throw new IllegalArgumentException();
+    @GetMapping("/api/departments/{id}/courses/{courseId}/offerings")
+    public List<Section_> getDeptCourses(@PathVariable("id") long deptId, @PathVariable("courseId") long courseId) {
+        return courseSectionList.getSectionListByCourseId(courseId).getSections();
+    }
 
-        return dept.getAllCourses();
+    @GetMapping("/api/departments/{id}/courses/{courseId}/offerings/{sectionId}")
+    public Section_ getDeptCourses(@PathVariable("id") long deptId, @PathVariable("courseId") long courseId,  @PathVariable("sectionId") long sectionId) {
+        return courseSectionList.getSectionListByCourseId(courseId).getSectionBySectionId(sectionId);
     }
 
     // Create Exception Handle
